@@ -1,9 +1,9 @@
-function rentalCarCost(d) 
+function rentalCarCost(days) 
 {
-  let totalCost  = d* 40; 
-  if ( d>= 7)  
+  let totalCost  = days* 40; 
+  if ( days>= 7)  
     totalCost = totalCost - 50; 
-  else if( d>=3 )  
+  else if( days>=3 )  
     totalCost  =  totalCost - 20; 
   return totalCost;
 }
