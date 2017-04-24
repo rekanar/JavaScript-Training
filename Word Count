@@ -1,0 +1,15 @@
+function countWords(str) 
+{   
+  str = str.trim();  
+  if (str != '') 
+  {    
+    str = str.replace(/(^\s*)|(\s*$)/gi, "");    
+    str = str.replace(/[ ]{2,}/gi, " ");    
+    str = str.replace(/\n /, "\n");    
+    str = str.match(/\S+/g);
+    return str.length;  } 
+    else 
+    {
+      return 0;  
+      }
+}
