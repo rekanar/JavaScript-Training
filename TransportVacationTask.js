@@ -1,5 +1,6 @@
 function rentalCarCost(d) 
-{   
+{ 
+  
   if (d < 3) 
   {    
    return d * 40;  
@@ -11,4 +12,5 @@ function rentalCarCost(d)
   else if (d > 6) 
     {    return (d * 40) - 50;  
     }
+  
 }
