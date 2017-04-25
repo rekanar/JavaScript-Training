@@ -14,3 +14,7 @@ function getMiddle(s)
   }  
   return middleChar;
 }
+function IsEven(len) 
+{  
+  return (len % 2 == 0)
+};
