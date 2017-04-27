@@ -1,0 +1,15 @@
+function add(x) {
+
+return function Evaluate(y) {
+    if (typeof y !== 'undefined') 
+        {
+        	  x = x + y;
+           return Evaluate;//Return this Evaluate fucntion reference for further execution
+        } 
+        else 
+        {
+            return x;
+        }
+    };
+}
+alert(add(1)(4)(3)()); //6
