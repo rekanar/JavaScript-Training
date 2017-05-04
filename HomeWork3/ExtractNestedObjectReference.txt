@@ -1,0 +1,31 @@
+
+var obj = {
+  person: {
+    name: 'joe',
+    history: {
+      hometown: 'bratislava',
+      funFact: {
+        bio: 'I like fishing.'
+      }
+    }
+  }
+  
+};
+
+Object.prototype.hash = function(string) {
+ var parentObject = this;
+ var listOfProps = string.split('.');
+ 
+ 
+    while (parentObject && listOfProps.length) {
+       parentObject = parentObject[listOfProps.shift()];
+
+    }
+
+  return parentObject;
+}
+
+
+
+
+
