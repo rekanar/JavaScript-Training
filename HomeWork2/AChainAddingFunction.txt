@@ -1,0 +1,11 @@
+function add(val1) {
+
+   function fun(val2) {
+        return add(val1 + val2);
+    };
+
+  fun.valueOf = function() {
+        return val1
+    };
+    return fun;
+}
