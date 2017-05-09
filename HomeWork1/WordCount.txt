@@ -1,6 +1,0 @@
-function countWords(str)
- {  
-   var re = /\s/;
-   return str.trim().split(re).filter(x => {return x!= ""}).length;
- }
-
