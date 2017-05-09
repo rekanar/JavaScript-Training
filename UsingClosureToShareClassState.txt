@@ -1,0 +1,35 @@
+var Cat = (function() {
+
+ 
+    var totalWeight = 0;
+    var noOfInstances= 0;
+
+    function Cat(name, weight) {
+    "use strict"
+        this.name = name;
+        
+        Object.defineProperty(this, 'weight', {
+            get: function() {
+                return weight;
+            },
+            set: function(val) {
+                weight = val;
+            }
+        });
+        
+        totalWeight += weight;
+        noOfInstances += 1;
+    }
+
+    Cat.averageWeight = function() {
+        return totalWeight / noOfInstances;
+    };
+
+    return Cat;
+
+}());
+
+
+fluffy = new Cat('fluffy',15);
+garry = new Cat('garry',25);
+
