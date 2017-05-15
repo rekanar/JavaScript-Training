@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+    <title>CATS</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/angular.js"></script>
+	<script src="CatApp/CatApp.js"></script>
+	<script src="CatApp/controllers/FirstCatController.js"></script>
+	<script src="CatApp/controllers/CatsController.js"></script>
+	<script src="CatApp/controllers/CatsSelectController.js"></script>
+</head>
+
+<body ng-app="catclick">
+
+		   <div class="panel panel-default">
+			<div class="container" ng-controller="catController as vm">
+  				<h1>CAT</h1>
+  				<div class="row">
+    			<img ng-src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/140.jpg" alt="cat" ng-click="vm.catClick()">
+					Number of Times Clicked = {{vm.count}}
+				</div>
+  		  </div>
+  		  <div>
+		  
+		   <p class="lead"></p>
+		  <div class="panel panel-default">
+		   <div class="container" ng-controller="catsClickController as vm">
+		   <h1>CATS</h1>
+		   
+  				<div class="row">
+				<thead>
+                <tr>
+                  <th>Name</th>&nbsp;&nbsp;&nbsp;<th>Garry</th>
+                </tr>
+              </thead>
+    				<img ng-src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/138.jpg" height="200px" width="200px" alt="cat1" style="float:Left" ng-click="vm.clickCount1()"> 
+    			</div>
+				<p class="lead"></p>
+				<div class="row">
+				<thead>
+                <tr>
+                  <th>Name</th>&nbsp;&nbsp;&nbsp;<th>Rossey</th>
+                </tr>
+              </thead>
+					<img ng-src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg" alt="cat2" height="200px" width="200px" style="float:Left" ng-click="vm.clickCount2()"> 
+				</div>
+    			<div>Total Count={{vm.cat1Clik+vm.cat2Clik}}</div>
+  			</div>
+			</div>
+			 <p class="lead"></p>
+		  <div class="panel panel-default">
+			
+			<div class="container" ng-controller="catClick3Controller as vm">
+    			 <div class="row">
+				 <h3 style="text-align: center;text-shadow: 0px 4px 6px;">All CATS</h3>
+				 <div class="row" ng-repeat="cat in vm.cats track by $index">
+				 	<a href ng-click="vm.selectedCat(cat);" ng-model="cat"><img ng-src="{{cat.url}}" alt=cat:{{$index+1}} height="200" width="200" style="float:left"/></a>
+				 </div>
+    			<br/>
+    				<div ng-show="vm.selectedOne">
+						<span>{{vm.selectedOne.name}}</span><img ng-src="{{vm.selectedOne.url}}" alt="{{vm.selectedOne.name}}" height="200" width="200" style="float:left" ng-click="vm.selecteCatClick()"> Selected Cat clicks:{{vm.selectedCatClicks}}
+     					<span>Total Clicks:{{vm.totalclicks}}</span>
+           			</div>
+		 	  </div>
+		   </div>
+</body>
+
+
+    
+    
+    
+</body>
+</html>
